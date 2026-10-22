@@ -1,4 +1,21 @@
 <title>Site em 48h · 8ight</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1803699150673585');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1803699150673585&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Serif:ital@1&family=DM+Mono:wght@500&family=Figtree:wght@400;500;600;700&family=Montserrat:wght@500;800&display=swap">
@@ -484,11 +501,6 @@ document.querySelectorAll(".checkout").forEach(function(a){a.href=CHECKOUT_URL;a
 
 </script>
 <script>
-// ===== Pixel do Meta: cole o ID do seu pixel entre as aspas =====
-var PIXEL_ID = "";
-if (PIXEL_ID) {
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID); fbq('track', 'PageView');
-  document.querySelectorAll('.checkout').forEach(function(a){a.addEventListener('click',function(){fbq('track','InitiateCheckout',{value:97,currency:'BRL'});});});
-}
+// Evento de clique nos botões de compra
+document.querySelectorAll(".checkout").forEach(function(a){a.addEventListener("click",function(){if(window.fbq)fbq("track","InitiateCheckout",{value:97,currency:"BRL"});});});
 </script>
